@@ -1,0 +1,50 @@
+{% load static %} {% if messg %}
+<script>
+    alert("{{ messg }}");
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Authorization</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}?{% now "U" %}"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+    </head>
+
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="circle"></div>
+                <h1>Neural App</h1>
+                <a href="https://github.com/CreatoR750/Neural-App" target="_blank" class="btn btn-primary">GITHUB</a>
+            </div>
+        </div>
+    </header>
+
+    <body class="">
+        <div class="card">
+            <div class="card-header">
+                <h3>Login Form</h3>
+            </div>
+            <form action="/admin_panel/" method="post" id="loginForm">
+                {% csrf_token %}
+                <small><span id="error" style="color: red"></span></small>
+                <label class="custom-field">
+                    <input type="email" name="email" id="email" type="text" class="input" required />
+                    <span class="placeholder">Email</span> </label
+                ><br />
+                <label class="custom-field">
+                    <input type="password" name="pass" id="password" type="password" class="input" required />
+                    <span class="placeholder">Password</span> </label
+                ><br /><br />
+                <button type="submit" value="SignIn" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </body>
+</html>

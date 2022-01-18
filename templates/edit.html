@@ -1,0 +1,30 @@
+{% extends "admin_base.html" %} {% block content %}
+<div class="info-header">
+                    <h2>Options</h2>
+                    <form class = "" method="POST">
+                        {% csrf_token %}
+                        <div class="info-form">
+                            <div class="neural-network">Diagram:
+                                 <select name = "diagram">
+                                  <option>Bar</option>
+                                  <option>Pie</option>
+                                </select>
+                            </div>
+                            <div class="neural-network">Dropout:
+                                 <select name = "dropout">
+                                  <option>0.2</option>
+                                  <option>0.5</option>
+                                </select>
+                            </div>
+                            <div class="neural-network">Accuracy:
+                                 <select name = "accuracy">
+                                  <option>ON</option>
+                                  <option>OFF</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save Config</button>
+                    </form>
+                </div>
+
+{% endblock %}
